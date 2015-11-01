@@ -1,0 +1,5 @@
+opensmtpd-extras (5.7.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #803688)
+
+ -- Ryan Kavanagh <rak@debian.org>  Sun, 01 Nov 2015 21:03:14 -0500

@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+            --with-mantype=man \
+            --with-privsep-path=/var/lib/opensmtpd/empty \
+            --with-privsep-user=opensmtpd \
+	    --with-filter-clamav \
+	    --with-filter-dkim-signer \
+	    --with-filter-dnsbl \
+	    --with-filter-monkey \
+	    --with-filter-pause \
+	    --with-filter-regex \
+	    --with-filter-spamassassin \
+	    --with-filter-trace \
+	    --with-table-ldap \
+	    --with-table-mysql \
+	    --with-table-postgres \
+	    --with-table-redis \
+	    --with-table-socketmap \
+	    --with-table-passwd \
+	    --with-table-sqlite

@@ -1,0 +1,60 @@
+Source: opensmtpd-extras
+Section: mail
+Priority: extra
+Maintainer: Ryan Kavanagh <rak@debian.org>
+Build-Depends: debhelper (>= 9)
+ , autoconf
+ , automake
+ , libasr-dev
+ , libevent-dev
+ , libhiredis-dev
+ , libmysqlclient-dev
+ , libpq-dev
+ , libsqlite3-dev
+ , libtool
+Standards-Version: 3.9.6
+Homepage: https://opensmtpd.org/
+Vcs-Git: git://anonscm.debian.org/collab-maint/opensmtpd-extras.git
+Vcs-Browser: https://anonscm.debian.org/gitweb/?p=collab-maint/opensmtpd-extras.git;a=summary
+
+Package: opensmtpd-extras
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+ , opensmtpd
+Breaks: opensmtpd (<< 5.7.3p1)
+Replaces: opensmtpd (<< 5.7.3p1)
+Enhances: opensmtpd
+Suggests: clamav-daemon
+ , spamassassin
+Description: addons for the OpenSMTPD SMTP server
+ The OpenSMTPD server seeks to be
+  * as secure as possible, and uses privilege separation to mitigate
+    possible security bugs
+  * as reliable as possible: any accepted email must not be lost
+  * lean: it covers typical usage cases instead of every obscure one
+  * easy to configure, with a configuration syntax reminiscent of the OpenBSD
+    Packet Filter's (PF)
+  * fast and efficient: it can handle large queues with reasonable performance
+ .
+ This package provides the full set of addons for OpenSMTPD, including
+ experimental ones. Please see each for a description of additional
+ dependencies.
+  * Tables:
+    + ldap: support lookup against LDAP
+    + mysql: support lookup against MySQL
+    + passwd: support lookup in passwd-format tables
+    + postgres: support lookup against PostgreSQL
+    + redis: support lookup against a Redis server 
+    + socketmap: support lookups against sockets
+    + sqlite: support lookup in SQLite tables
+  * Filters: 
+    + clamav: filter mail through clamd [clamav-daemon]
+    + dkim-signer: add DKIM signatures to headers
+    + dnsbl: perform DNSBL checks
+    + monkey: randomly accept mail with a probability of 70%
+    + pause: pause on new connections to avoid "slamming" attacks
+    + regex: filter mail using regex
+    + spamassassin: filter mail through SpamAssassin's spamd [spamassassin]
+    + trace: trace SMTP sessions
+ This package does not yet provide the language bindings (Python, Perl, Lua,
+ etc.) for implementing additional filters.

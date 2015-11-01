@@ -1,0 +1,231 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: opensmtpd-extras
+Source: Tarball from: https://opensmtpd.org/
+        Git repository from: https://github.com/OpenSMTPD/OpenSMTPD-extras
+
+Files: *
+Copyright: Copyright (c) 1996                David Mazieres <dm@uun.org>
+           Copyright (c) 1996                Internet Software Consortium.
+           Copyright (c) 1996-1998, 2008     Theo de Raadt
+           Copyright (c) 1997–1998,2000,
+                         2002,2004-2005,
+                         2008–2009           Todd C. Miller <Todd.Miller@courtesan.com>
+           Copyright (c) 1999–2004           Damien Miller <djm@mindrot.org>
+           Copyright (c) 2000–2001           Markus Friedl
+           Copyright (c) 2003–2004           Henning Brauer <henning@openbsd.org>
+           Copyright (c) 2004                Ted Unangst
+           Copyright (c) 2006–2007           Claudio Jeker <claudio@openbsd.org>
+           Copyright (c) 2006–2007           Marc Balmer <mbalmer@openbsd.org>
+           Copyright (c) 2006–2007           Pierre-Yves Ritschard <pyr@openbsd.org>
+           Copyright (c) 2006–2008           Reyk Floeter <reyk@openbsd.org>
+           Copyright (c) 2008                Damien Miller <djm@openbsd.org>
+           Copyright (c) 2008                Otto Moerbeek <otto@drijf.net>
+           Copyright (c) 2008                Alexander Schrijver <aschrijver@openbsd.org>
+           Copyright (c) 2009                Jacek Masiulaniec <jacekm@dobremiasto.net>
+           Copyright (c) 2013                Markus Friedl <markus@openbsd.org>u
+           Copyright (c) 2012–2014           Eric Faurot <eric@openbsd.org>,<eric@faurot.net>
+           Copyright (c) 2008,2010,2012–2014 Gilles Chehade <gilles@poolp.org>
+           Copyright (c) 2014                Michael Neumann <mneumann@ntecs.de>
+           Copyright (c) 2014                Jason Barbier <kusuriya@serversave.us>
+           Copyright (c) 2014                Sunil Nimmagadda <sunil@nimmagadda.net>
+           Copyright (c) 2014–2015           Emmanuel Vadot <manu@bocal.org>
+           Copyright (c) 2015                Armin Wolfermann <armin@wolfermann.org>
+           Copyright (c) 2015                Joerg Jung <jung@openbsd.org>
+           Copyright (c) 2015                Bernard Spil <brnrd@FreeBSD.org>
+License: ISC
+
+Files: debian/*
+Copyright: Copyright (c) 2015 Ryan Kavanagh <rak@debian.org>
+License: ISC
+
+Files: openbsd-compat/base64.c
+       openbsd-compat/base64.h
+Copyright: Copyright (c) 1995 International Business Machines, Inc.
+           Copyright (c) 1996 Internet Software Consortium.
+License: ISC and IBM-permissive
+
+Files: openbsd-compat/bsd-waitpid.c
+       openbsd-compat/bsd-waitpid.h
+       openbsd-compat/defines.h
+       openbsd-compat/entropy.c
+       openbsd-compat/entropy.h
+       openbsd-compat/fgetln.c
+       openbsd-compat/openbsd-compat.h
+       openbsd-compat/pidfile.c
+       openbsd-compat/sys/tree.h
+       openbsd-compat/util.h
+Copyright: Copyright (c) 1999      The NetBSD Foundation, Inc.
+           Copyright (c) 1999–2003 Damien Miller
+           Copyright (c) 2000,2003 Ben Lindstrom
+           Copyright (c) 2001      Marc Espie.
+           Copyright (c) 2002      Niels Provos <provos@citi.umich.edu>
+           Copyright (c) 2002      Tim Rice
+           Copyright (c) 2015      Jason A. Donenfeld <Jason@zx2c4.com>
+License: BSD-2-clause
+
+Files: openbsd-compat/daemon.c
+       openbsd-compat/getopt.c
+       openbsd-compat/setproctitle.c
+       openbsd-compat/strmode.c
+       openbsd-compat/strsep.c
+       openbsd-compat/sys/queue.h
+       openbsd-compat/vis.c
+       openbsd-compat/vis.h
+Copyright:
+       Copyright (c) 1987–1991, 1993–1994 The Regents of the University of California
+       Copyright (c) 1983, 1995-1997      Eric P. Allman
+       Copyright (c) 2003                 Damien Miller
+License: BSD-3-clause-original
+
+Files: openbsd-compat/fmt_scaled.c
+Copyright: Copyright (c) 2001, 2002, 2003 Ian F. Darwin.
+License: BSD-3-clause
+
+Files: openbsd-compat/fparseln.c
+Copyright: Copyright (c) 1997 Christos Zoulas.  All rights reserved.
+License: BSD-4-clause-Zoulas
+
+Files: openbsd-compat/includes.h
+       openbsd-compat/setresguid.c
+       openbsd-compat/xmalloc.c
+       openbsd-compat/xmalloc.h
+Copyright: Copyright (c) 1995 Tatu Ylonen <ylo@cs.hut.fi>, Espoo, Finland
+License: permissive
+ As far as I am concerned, the code I have written for this software
+ can be used freely for any purpose.  Any derived versions of this
+ software must be clearly marked as such, and if the derived work is
+ incompatible with the protocol description in the RFC file, it must be
+ called by a name other than "ssh" or "Secure Shell".
+
+
+
+
+License: BSD-2-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-3-clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-3-clause-original
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. Neither the name of the University nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+
+License: BSD-4-clause-Zoulas
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ 3. All advertising materials mentioning features or use of this software
+    must display the following acknowledgement:
+      This product includes software developed by Christos Zoulas.
+ 4. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: IBM-permissive
+ International Business Machines, Inc. (hereinafter called IBM) grants
+ permission under its copyrights to use, copy, modify, and distribute this
+ Software with or without fee, provided that the above copyright notice and
+ all paragraphs of this notice appear in all copies, and that the name of IBM
+ not be used in connection with the marketing of any product incorporating
+ the Software or modifications thereof, without specific, written prior
+ permission.
+ .
+ To the extent it has a right to do so, IBM grants an immunity from suit
+ under its patents, if any, for the use, sale or manufacture of products to
+ the extent that such products are used for performing Domain Name System
+ dynamic updates in TCP/IP networks by means of the Software.  No immunity is
+ granted for any product per se or for any other function of any product.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", AND IBM DISCLAIMS ALL WARRANTIES,
+ INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+ PARTICULAR PURPOSE.  IN NO EVENT SHALL IBM BE LIABLE FOR ANY SPECIAL,
+ DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER ARISING
+ OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE, EVEN
+ IF IBM IS APPRISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+License: ISC
+ Permission to use, copy, modify, and distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
