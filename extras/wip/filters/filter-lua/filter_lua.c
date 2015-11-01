@@ -336,20 +336,14 @@ on_disconnect(uint64_t id)
 int
 main(int argc, char **argv)
 {
-	int	 ch, d = 0, v = 0;
+	int	 ch;
 	char	*path;
 
-	log_init(1);
+	log_init(-1);
 
 	log_debug("debug: filter-lua: args: %s", argv[1]);
-	while ((ch = getopt(argc, argv, "dv")) != -1) {
+	while ((ch = getopt(argc, argv, "")) != -1) {
 		switch (ch) {
-		case 'd':
-			d = 1;
-			break;
-		case 'v':
-			v |= TRACE_DEBUG;
-			break;
 		default:
 			log_warnx("warn: filter-lua: bad option");
 			return (1);
@@ -361,10 +355,8 @@ main(int argc, char **argv)
 
 	if (argc == 0)
 		errx(1, "missing path");
-	path = argv[0];
 
-	log_init(d);
-	log_verbose(v);
+	path = argv[0];
 
 	log_debug("debug: filter-lua: starting...");
 

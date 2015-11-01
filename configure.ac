@@ -14,11 +14,9 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-AC_PREREQ(2.69)
-
-dnl AC_INIT([OpenSMTPD-extras], m4_esyscmd(date +%Y%m%d%H%M%S | sed -e 's/^\(.*\)$/5.7-\1/' | tr -d '\n'), [bugs@opensmtpd.org], [opensmtpd-extras], [https://github.com/OpenSMTPD/OpenSMTPD-extras])
-AC_INIT([OpenSMTPD-extras], [5.7.2], [bugs@opensmtpd.org], [opensmtpd-extras], [https://github.com/OpenSMTPD/OpenSMTPD-extras])
-
+dnl AC_INIT([OpenSMTPD-portable],[4.9.0],[Charles Longeau <chl@openbsd.org>])
+dnl AC_INIT([OpenSMTPD-portable], m4_esyscmd(date +%Y%m%d%H%M%S | sed -e 's/^\(.*\)$/5.2-\1/' | tr -d '\n'),[Charles Longeau <chl@openbsd.org>])
+AC_INIT([opensmtpd], [portable], [bugs@opensmtpd.org])
 AC_LANG([C])
 AC_CONFIG_MACRO_DIR([m4])
 
@@ -1862,15 +1860,6 @@ fi
 AC_SUBST([mansubdir])
 #l4207
 
-case "$host" in
-*-*-openbsd*)
-	pkglibexecdir="$libexecdir/smtpd"
-	;;
-*)
-	pkglibexecdir="$libexecdir/opensmtpd"
-	;;
-esac
-AC_SUBST([pkglibexecdir])
 
 
 #
@@ -2167,7 +2156,6 @@ AC_ARG_WITH([table-redis],
 			AC_DEFINE([HAVE_TABLE_REDIS], [1],
 				[Define if you have experimental Redis support])
 			HAVE_TABLE_REDIS=yes
-			need_redis=yes
 		fi
 	]
 )
@@ -2427,34 +2415,6 @@ fi
 AC_SUBST([LUA_CPPFLAGS])
 AC_SUBST([LUA_LDFLAGS])
 
-#
-# check for hiredis
-#
-REDIS_CPPFLAGS=
-REDIS_LDFLAGS=
-if test x"${need_redis}" = x"yes"; then
-   REDIS_CONFIG=
-   for path in /usr/local/bin /usr/bin; do
-	if test -f ${path}/pkg-config; then
-		REDIS_CONFIG=${path}/pkg-config
-		break
-	fi
-   done
-
-   # if redis provided --with-redis, override
-   if test x"${with_hiredis}" != x""; then
-      REDIS_CONFIG="${redis_prefix}/bin/pkg-config"
-   fi
-
-   if ! test -f $REDIS_CONFIG; then
-      AC_MSG_ERROR([*** $REDIS_CONFIG could not be found, please install or use --with-redis ***])
-   fi
-
-   REDIS_CPPFLAGS="`$REDIS_CONFIG --cflags hiredis`"
-   REDIS_LDFLAGS="`$REDIS_CONFIG --libs hiredis`"
-fi
-AC_SUBST([REDIS_CPPFLAGS])
-AC_SUBST([REDIS_LDFLAGS])
 
 ##chl (based on OpenSSL checks, see above)
 # Search for libevent
@@ -2600,7 +2560,6 @@ echo "                   encrypt program: $F"
 echo "                      Manual pages: $G"
 echo "                    smtpd.sock dir: $H"
 echo "  Privilege separation chroot path: $I"
-echo "                Package libexecdir: ${pkglibexecdir}"
 echo "                    Manpage format: $MANTYPE"
 
 echo ""
@@ -2631,12 +2590,5 @@ if test x"${need_lua}" = x"yes"; then
 echo "Built with Lua support:"
 echo "          CPPFLAGS: ${LUA_CPPFLAGS}"
 echo "           LDFLAGS: ${LUA_LDFLAGS}"
-echo ""
-fi
-
-if test x"${need_redis}" = x"yes"; then
-echo "Built with redis support:"
-echo "          CPPFLAGS: ${REDIS_CPPFLAGS}"
-echo "           LDFLAGS: ${REDIS_LDFLAGS}"
 echo ""
 fi

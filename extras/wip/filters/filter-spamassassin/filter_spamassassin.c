@@ -322,21 +322,15 @@ spamassassin_on_rollback(uint64_t id)
 int
 main(int argc, char **argv)
 {
-	int	ch, d = 0, v = 0;
+	int	ch;
 	const char *s = NULL;
 
-	log_init(1);
+	log_init(-1);
 
-	while ((ch = getopt(argc, argv, "ds:v")) != -1) {
+	while ((ch = getopt(argc, argv, "s:")) != -1) {
 		switch (ch) {
-		case 'd':
-			d = 1;
-			break;
 		case 's':
 			s = optarg;
-			break;
-		case 'v':
-			v |= TRACE_DEBUG;
 			break;
 		default:
 			log_warnx("warn: filter-spamassassin: bad option");
@@ -357,9 +351,6 @@ main(int argc, char **argv)
 		else
 			fatalx("filter-spamassassin: bad strategy");
 	}
-
-	log_init(d);
-	log_verbose(v);
 
 	log_debug("debug: filter-spamassassin: starting...");
 

@@ -101,20 +101,14 @@ dnsbl_on_connect(uint64_t id, struct filter_connect *conn)
 int
 main(int argc, char **argv)
 {
-	int	ch, d = 0, v = 0;
+	int	ch;
 
-	log_init(1);
+	log_init(-1);
 
-	while ((ch = getopt(argc, argv, "dh:v")) != -1) {
+	while ((ch = getopt(argc, argv, "h:")) != -1) {
 		switch (ch) {
-		case 'd':
-			d = 1;
-			break;
 		case 'h':
 			dnsbl_host = optarg;
-			break;
-		case 'v':
-			v |= TRACE_DEBUG;
 			break;
 		default:
 			log_warnx("warn: filter-dnsbl: bad option");
@@ -124,9 +118,6 @@ main(int argc, char **argv)
 	}
 	argc -= optind;
 	argv += optind;
-
-	log_init(d);
-	log_verbose(v);
 
 	log_debug("debug: filter-dnsbl: starting...");
 
