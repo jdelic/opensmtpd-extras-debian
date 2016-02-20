@@ -1,3 +1,13 @@
+opensmtpd-extras (5.7.1-2) unstable; urgency=medium
+
+  * Don't ignore --with-privsep-path configure option, 03_PATH_CHROOT.diff
+    (Closes: #612537)
+  * Bump Standards-Version to 3.9.7
+  * Fix typo in filter-pause(8), 04_manpage_typo.diff
+  * Transition Vcs-Git URL from git:// to https://
+
+ -- Ryan Kavanagh <rak@debian.org>  Sat, 20 Feb 2016 17:22:29 -0500
+
 opensmtpd-extras (5.7.1-1) unstable; urgency=low
 
   * Initial release (Closes: #803688)
