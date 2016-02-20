@@ -1,0 +1,53 @@
+Description: Don't ignore the --with-privsep-path configure option
+ Was causing filters to crash at startup: they were trying to chroot into a
+ non-existent default directory, instead of the one we specified with the
+ aforementioned option.
+Author: Ryan Kavanagh <rak@debian.org>
+Bug: https://github.com/OpenSMTPD/OpenSMTPD/issues/659
+Bug-Debian: https://bugs.debian.org/812537
+Forwarded: not-needed, https://github.com/OpenSMTPD/OpenSMTPD/issues/659
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+Index: opensmtpd-extras/api/smtpd-defines.h
+===================================================================
+--- opensmtpd-extras.orig/api/smtpd-defines.h	2016-02-20 17:12:54.966631013 -0500
++++ opensmtpd-extras/api/smtpd-defines.h	2016-02-20 17:12:54.966631013 -0500
+@@ -64,7 +64,9 @@
+ #define	SMTPD_MAXLINESIZE	2048
+ 
+ #define SMTPD_USER		"_smtpd"
++#ifndef PATH_CHROOT
+ #define PATH_CHROOT		"/var/empty"
++#endif
+ #define SMTPD_QUEUE_USER	 "_smtpq"
+ #define PATH_SPOOL		"/var/spool/smtpd"
+ 
+Index: opensmtpd-extras/mk/filter.mk
+===================================================================
+--- opensmtpd-extras.orig/mk/filter.mk	2016-02-20 17:12:54.966631013 -0500
++++ opensmtpd-extras/mk/filter.mk	2016-02-20 17:20:58.178831942 -0500
+@@ -13,5 +13,5 @@
+ LIBCOMPAT	= $(top_builddir)/openbsd-compat/libopenbsd-compat.a
+ LDADD		= $(LIBCOMPAT)
+ 
+-CFLAGS=			-DNO_IO -DBUILD_FILTER
++CFLAGS+=			-DNO_IO -DBUILD_FILTER
+ 
+Index: opensmtpd-extras/mk/stable.mk
+===================================================================
+--- opensmtpd-extras.orig/mk/stable.mk	2016-02-20 09:18:52.591410148 -0500
++++ opensmtpd-extras/mk/stable.mk	2016-02-20 17:21:37.055120354 -0500
+@@ -13,3 +13,4 @@
+ 		-DPATH_SMTPCTL=\"$(sbindir)/smtpctl\"			\
+ 		-DPATH_MAILLOCAL=\"$(pkglibexecdir)/mail.local\"	\
+ 		-DPATH_LIBEXEC=\"$(pkglibexecdir)\"
++CFLAGS +=	$(PATHS)
+Index: opensmtpd-extras/mk/wip.mk
+===================================================================
+--- opensmtpd-extras.orig/mk/wip.mk	2016-02-20 17:13:38.139042287 -0500
++++ opensmtpd-extras/mk/wip.mk	2016-02-20 17:21:48.303202803 -0500
+@@ -13,3 +13,4 @@
+ 		-DPATH_SMTPCTL=\"$(sbindir)/smtpctl\"			\
+ 		-DPATH_MAILLOCAL=\"$(pkglibexecdir)/mail.local\"	\
+ 		-DPATH_LIBEXEC=\"$(pkglibexecdir)\"
++CFLAGS +=	$(PATHS)
