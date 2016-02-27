@@ -1,7 +1,7 @@
 opensmtpd-extras (5.7.1-2) unstable; urgency=medium
 
   * Don't ignore --with-privsep-path configure option, 03_PATH_CHROOT.diff
-    (Closes: #612537)
+    (Closes: #812537)
   * Bump Standards-Version to 3.9.7
   * Fix typo in filter-pause(8), 04_manpage_typo.diff
   * Transition Vcs-Git URL from git:// to https://
