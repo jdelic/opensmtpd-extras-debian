@@ -2,3 +2,4 @@
 02_table_sqlite.5.diff
 03_PATH_CHROOT.diff
 04_manpage_typo.diff
+05_TABLE_POSTGRES.diff
