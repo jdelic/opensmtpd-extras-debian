@@ -1,0 +1,9 @@
+opensmtpd-extras (5.7.1-2) unstable; urgency=medium
+
+    The opensmtpd-extras package has been split into two separate binary
+    packages. Users wishing to continue using filters should install the
+    opensmtpd-extras-experimental package. They are reminded that experimental
+    filters may cause your OpenSMTPD installation to become unstable,
+    insecure, or worse. Please proceed with caution!
+
+ -- Ryan Kavanagh <rak@debian.org>  Thu, 24 Nov 2016 10:15:28 -0500
