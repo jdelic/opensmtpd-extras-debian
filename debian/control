@@ -5,14 +5,15 @@ Maintainer: Ryan Kavanagh <rak@debian.org>
 Build-Depends: debhelper (>= 9)
  , autoconf
  , automake
+ , default-libmysqlclient-dev
  , libasr-dev
  , libevent-dev
  , libhiredis-dev
- , libmysqlclient-dev
  , libpq-dev
  , libsqlite3-dev
+ , libssl1.0-dev
  , libtool
-Standards-Version: 3.9.7
+Standards-Version: 3.9.8
 Homepage: https://opensmtpd.org/
 Vcs-Git: https://anonscm.debian.org/git/collab-maint/opensmtpd-extras.git
 Vcs-Browser: https://anonscm.debian.org/gitweb/?p=collab-maint/opensmtpd-extras.git;a=summary
@@ -24,19 +25,8 @@ Depends: ${shlibs:Depends}, ${misc:Depends}
 Breaks: opensmtpd (<< 5.7.3p1)
 Replaces: opensmtpd (<< 5.7.3p1)
 Enhances: opensmtpd
-Suggests: clamav-daemon
- , spamassassin
 Description: addons for the OpenSMTPD SMTP server
- The OpenSMTPD server seeks to be
-  * as secure as possible, and uses privilege separation to mitigate
-    possible security bugs
-  * as reliable as possible: any accepted email must not be lost
-  * lean: it covers typical usage cases instead of every obscure one
-  * easy to configure, with a configuration syntax reminiscent of the OpenBSD
-    Packet Filter's (PF)
-  * fast and efficient: it can handle large queues with reasonable performance
- .
- This package provides the full set of addons for OpenSMTPD, including
+ This package provides a subset of addons for OpenSMTPD, including
  experimental ones. Please see each for a description of additional
  dependencies.
   * Tables:
@@ -47,6 +37,23 @@ Description: addons for the OpenSMTPD SMTP server
     + redis: support lookup against a Redis server 
     + socketmap: support lookups against sockets
     + sqlite: support lookup in SQLite tables
+
+Package: opensmtpd-extras-experimental
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+ , opensmtpd
+Breaks: opensmtpd (<< 5.7.3p1), opensmtpd-extras (<< 5.7.1-3)
+Replaces: opensmtpd (<< 5.7.3p1), opensmtpd-extras (<< 5.7.1-3)
+Enhances: opensmtpd
+ , opensmtpd-extras
+Suggests: clamav-daemon
+ , spamassassin
+Description: experimental addons for the OpenSMTPD SMTP server
+ This package provides experimental addons for OpenSMTPD. Using these may
+ cause your OpenSMTPD installation to become unstable, insecure, or worse.
+ Proceed with caution!
+ .
+ Please see each for a description of additional dependencies.
   * Filters: 
     + clamav: filter mail through clamd [clamav-daemon]
     + dkim-signer: add DKIM signatures to headers

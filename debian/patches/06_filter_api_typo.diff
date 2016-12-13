@@ -1,0 +1,19 @@
+Description: Fix typo in filter_api
+Author: Ryan Kavanagh <rak@debian.org>
+Origin: Debian
+Forwarded: https://github.com/OpenSMTPD/OpenSMTPD-extras/pull/43
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+Index: opensmtpd-extras/api/filter_api.c
+===================================================================
+--- opensmtpd-extras.orig/api/filter_api.c	2016-02-20 09:18:52.575410033 -0500
++++ opensmtpd-extras/api/filter_api.c	2016-11-24 19:56:22.689706097 -0500
+@@ -359,7 +359,7 @@
+ 
+ 	s = tree_xget(&sessions, id);
+ 	if (s->qid) {
+-		log_warnx("warn: filter-api:%s query already in progess",
++		log_warnx("warn: filter-api:%s query already in progress",
+ 		    filter_name);
+ 		fatalx("filter-api: exiting");
+ 	}

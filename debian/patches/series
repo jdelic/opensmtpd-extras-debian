@@ -3,3 +3,4 @@
 03_PATH_CHROOT.diff
 04_manpage_typo.diff
 05_TABLE_POSTGRES.diff
+06_filter_api_typo.diff
